@@ -6,7 +6,7 @@ use App\Entity\Post;
 use DateTime;
 use joshtronic\LoremIpsum;
 
-class PostGenerator
+final class PostGenerator implements PostGeneratorInterface
 {
     private const COUNT_PARAGRAPHS_RANDOM_POST = 2;
     private const COUNT_PARAGRAPHS_SUMMARY_POST = 1;

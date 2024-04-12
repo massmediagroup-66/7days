@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use Domain\Post\PostManager;
+use Domain\Post\PostManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -12,9 +12,9 @@ class AddPostCommand extends Command
     protected static $defaultName = 'app:add-post';
     protected static $defaultDescription = 'Run app:add-post';
 
-    private PostManager $postManager;
+    private PostManagerInterface $postManager;
 
-    public function __construct(PostManager $postManager, string $name = null)
+    public function __construct(PostManagerInterface $postManager, string $name = null)
     {
         parent::__construct($name);
         $this->postManager = $postManager;

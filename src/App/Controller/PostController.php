@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Repository\PostRepository;
-use Domain\Post\PostManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,10 +24,10 @@ class PostController extends AbstractController
     /**
      * @Route("/post/{id}", name="app_post_show")
      */
-    public function show(PostManager $postManager, $id): Response
+    public function show(PostRepository $postRepository, int $id): Response
     {
         return $this->render('post/show.html.twig', [
-            'post' => $postManager->findPost($id),
+            'post' => $postRepository->find($id),
         ]);
     }
 }

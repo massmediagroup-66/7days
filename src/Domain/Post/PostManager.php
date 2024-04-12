@@ -5,7 +5,7 @@ namespace Domain\Post;
 use App\Entity\Post;
 use Doctrine\ORM\EntityManagerInterface;
 
-class PostManager
+final class PostManager implements PostManagerInterface
 {
     private EntityManagerInterface $em;
 
@@ -23,12 +23,5 @@ class PostManager
         $this->em->flush();
 
         return $post;
-    }
-
-    public function findPost($id): Post
-    {
-        $postRepository = $this->em->getRepository(Post::class);
-
-        return $postRepository->findOneBy(['id' => $id]);
     }
 }

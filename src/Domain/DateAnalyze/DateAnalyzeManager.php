@@ -7,7 +7,7 @@ use App\Model\DateAnalyze\DateInputModel;
 use DateTime;
 use DateTimeZone;
 
-class DateAnalyzeManager
+final class DateAnalyzeManager implements DateAnalyzeManagerInterface
 {
     public function getAnalyzeResultModel(DateInputModel $model): DateAnalyzeResultModel
     {
