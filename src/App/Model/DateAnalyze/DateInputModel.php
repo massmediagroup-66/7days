@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Model\Task1;
+namespace App\Model\DateAnalyze;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-class TaskModel
+class DateInputModel
 {
     /**
      * @Assert\NotBlank(message="Date should not be blank.")

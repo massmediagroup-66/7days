@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Form\Task1;
+namespace App\Form\DateAnalyze;
 
-use App\Model\Task1\TaskModel;
+use App\Model\DateAnalyze\DateInputModel;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ModelType extends AbstractType
+class DateInputType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -23,7 +23,7 @@ class ModelType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => TaskModel::class,
+            'data_class' => DateInputModel::class,
         ]);
     }
 }
